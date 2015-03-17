@@ -9,7 +9,7 @@ build:
         name: install dependencies
         code: |
           Rscript -e "devtools::install_deps()"
-    - script
+    - script:
         name: test
         code: |
           Rscript -e "devtools::test()"
