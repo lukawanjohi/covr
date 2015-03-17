@@ -1,0 +1,16 @@
+box: wercker-labs/docker
+build:
+  steps:
+    - script:
+        name: docker version
+        code: |
+          docker pull rocker/hadleyverse
+    - script:
+        name: install dependencies
+        code: |
+          Rscript -e "devtools::install_deps()"
+    - script
+        name: test
+        code: |
+          Rscript -e "devtools::test()"
+
